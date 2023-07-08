@@ -1,5 +1,8 @@
+## Command Line Examples
 
-##### Example : 1 - Without command line arguments 
+### Example 1 - Without command line arguments
+
+##### Code:
 ```java
 class A {
     public static void main(String[] args) {
@@ -7,158 +10,166 @@ class A {
     }
 }
 ```
-OUTPUT:
-     compilation:javac A.java
-     execution:java A 
-     output:hello world
 
-##### Example :  2  - With command line arguments : 
+##### Output:
+```
+Compilation: javac A.java
+Execution: java A 
+Output: Hello java
+```
+---
+### Example 2 - With command line arguments
+
+##### Code:
 ```java
-class A
-{
-  public static void main(String args[])
-  {
-   System.out.println(args[0]);
-   System.out.println(args[1]);
-  }
-}
-````
-OUTPUT:
-     compilation:javac A.java
-     execution:java A 10 20
-     Output : 10 20
-
-
-##### Example : 3  - Another Example same as like 
-Command Line arguments passing inputs :Java
-```java
-class A
-{
-  public static void main(String args[])
-  {
- 
-   System.out.println(args[0]);
-   System.out.println(args[1]); 
-   System.out.println(args[2]);
-   System.out.println(args[3]);
-  }
+class A {
+    public static void main(String args[]) {
+        System.out.println(args[0]);
+        System.out.println(args[1]);
+    }
 }
 ```
-OUTPUT:
 
-   Compile   : javac A.java
-   Execution : java A   10   2.5   a   helloworld
-   Output    :    10 2.5 a helloworld
+##### Output:
+```
+Compilation: javac A.java
+Execution: java A 10 20
+Output: 
+10
+20
+```
+---
+### Example 3 - Command Line Arguments with multiple inputs
 
-
-##### Example : 4  - (Sample Error Program )
+##### Code:
 ```java
-class A
-{
-  public static void main(String args[])
-  {
- 
-   System.out.println(args[0]); 
-   System.out.println(args[1]);
-   System.out.println(args[2]);
-   
-  }
+class A {
+    public static void main(String args[]) {
+        System.out.println(args[0]);
+        System.out.println(args[1]);
+        System.out.println(args[2]);
+        System.out.println(args[3]);
+    }
 }
 ```
-OUTPUT:
 
-Compile : Javac A.java
-execution:java A   10 20
-Output : Exception occur called ArrayOutOfBoundException() because access args[2] is not valid and there is no data to acces after 10,20 
-it gives exception // Error //
+##### Output:
+```
+Compile: javac A.java
+Execution: java A 10 2.5 a helloworld
+Output: 
+10
+2.5
+a
+helloworld
+```
+---
+### Example 4 - Error program
 
-
-##### Example : 5 - ( Without Parse ) 
-
+##### Code:
 ```java
-class A
-{
-  public static void main(String args[])
-  {
- 
-   System.out.println(args[0]+1);
-   System.out.println(args[1]+1);
- 
- 
-  }
+class A {
+    public static void main(String args[]) {
+        System.out.println(args[0]);
+        System.out.println(args[1]);
+        System.out.println(args[2]);
+    }
 }
 ```
-OUTPUT:
 
-Compile : Javac A.java
-Execution : Java A  10 20
-Output : 101 201
+##### Output:
+```
+Compile: javac A.java
+Execution: java A 10 20
+Output: Exception occur called ArrayOutOfBoundException() because access args[2] is not valid and there is no data to acces after 10,20. It gives an error.
+```
+---
+### Example 5 - Program without parse
 
-##### Example : 6 -  ( With Parse ) : 
+##### Code:
 ```java
-Program with parse :Java
-
-class A
-{
-  public static void main(String args[])
-  {
-  int a=Integer.parseInt(args[1]);//"10" convert to 10 and it will store in a
-  int b=Integer.parseInt(args[0]);//"20" convert to 20 and it will store in b
-   System.out.println(a+1);
-   System.out.println(b+1);
-
-  }
+class A {
+    public static void main(String args[]) {
+        System.out.println(args[0]+1);
+        System.out.println(args[1]+1);
+    }
 }
 ```
-OUTPUT:
-Compile : Javac A.java
-Execution : Java A 10 20 
-Output : 11 21
 
-##### Example :7  - Command-Line Arguments
+##### Output:
+```
+Compile: javac A.java
+Execution: java A 10 20
+Output: 101 201
+```
+---
+### Example 6 - Program with parse
+
+##### Code:
+```java
+class A {
+    public static void main(String args[]) {
+        int a=Integer.parseInt(args[1]); //"10" convert to 10 and it will store in a
+        int b=Integer.parseInt(args[0]); //"20" convert to 20 and it will store in b
+        System.out.println(a+1);
+        System.out.println(b+1);
+    }
+}
+```
+
+##### Output:
+```
+Compile: javac A.java
+Execution: java A 10 20
+Output: 
+11
+21
+```
+---
+### Example 7 - Command-Line Arguments
+
+##### Code:
 ```java
 class Main {
-  public static void main(String[] args) {
-    System.out.println("Command-Line arguments are");
+    public static void main(String[] args) {
+        System.out.println("Command-Line arguments are");
 
-    // loop through all arguments
-    for(String str: args) {
-      System.out.println(str);
+        // loop through all arguments
+        for(String str: args) {
+            System.out.println(str);
+        }
     }
-  }
 }
 ```
-OUTPUT:
- To compile the code:
-javac Main.java
 
-To run the code:
-java Main
-
-java Main hello java world
-
-Output:
+##### Output:
+```
+To compile the code: javac Main.java
+To run the code: java Main hello java world
+Output: 
 Command-Line arguments are
 hello
 java
 world
+```
+---
+### Example 8 - Numeric Command-Line Arguments
 
-##### Example :8  - Numeric Command-Line Arguments #7
+##### Code:
 ```java
 class Main {
-  public static void main(String[] args) {
-
-    for(String str: args) {
-      // convert into integer type
-    int argument = Integer.parseInt(str);
-    System.out.println("Argument in integer form: " + argument);
+    public static void main(String[] args) {
+        for(String str: args) {
+            // convert into integer type
+            int argument = Integer.parseInt(str);
+            System.out.println("Argument in integer form: " + argument);
+        }
     }
-
-  }
 }
 ```
-OUTPUT:
 
+##### Output:
+```
 // compile the code
 javac Main.java
 
@@ -168,38 +179,40 @@ java Main 11 23
 Arguments in integer form
 11
 23
+```
+---
+### Example 9 - Read a Line of Text Using Scanner
 
-##### Example :9  - Read a Line of Text Using Scanner
+##### Code:
 ```java
 import java.util.Scanner;
 
 class Main {
-  public static void main(String[] args) {
+    public static void main(String[] args) {
+        // creates an object of Scanner
+        Scanner input = new Scanner(System.in);
 
-    // creates an object of Scanner
-    Scanner input = new Scanner(System.in);
+        System.out.print("Enter your name: ");
 
-    System.out.print("Enter your name: ");
+        // takes input from the keyboard
+        String name = input.nextLine();
 
-    // takes input from the keyboard
-    String name = input.nextLine();
+        // prints the name
+        System.out.println("My name is " + name);
 
-    // prints the name
-    System.out.println("My name is " + name);
-
-    // closes the scanner
-    input.close();
-  }
+        // closes the scanner
+        input.close();
+    }
 }
 ```
 
-OUTPUT:
-
+##### Output:
+```
 Enter your name: Tom
 My name is Tom
+```
 
-
-##### Example : 10 - Java Scanner nextInt() 
+### Example 10 - Java Scanner nextInt()
 
 ```java
 import java.util.Scanner;
@@ -221,14 +234,23 @@ class Main {
     input.close();
   }
 }
-```
-OUTPUT:
 
+```
+
+##### Output:
+
+```
 Enter an integer:
 123
 Using nextInt(): 123
+```
 
-##### Example :11 -  Java Scanner nextDouble()
+##### Explanation:
+
+In this example, we create a `Scanner` object to get input from the user. We then prompt the user to enter an integer, read the user's input using the `nextInt()` method, and then print the integer value entered by the user.
+
+
+### Example 11 - Java Scanner nextDouble()
 
 ```java
 import java.util.Scanner;
@@ -248,13 +270,20 @@ class Main {
   }
 }
 ```
-OUTPUT:
 
+##### Output:
+
+```
 Enter Double value: 98.76
 Using nextDouble(): 98.76
+```
+
+##### Explanation:
+
+In this example, we create a `Scanner` object to get input from the user. We then prompt the user to enter a double value, read the user's input using the `nextDouble()` method, and then print the double value entered by the user.
 
 
-##### Example : 12  - Java Scanner next() 
+### Example 12 - Java Scanner next()
 
 ```java
 import java.util.Scanner;
@@ -274,13 +303,20 @@ class Main {
   }
 }
 ```
-OUTPUT:
 
+##### Output:
+
+```
 Enter your name: Tom Hank
-Using next(): Tom Hank
+Using next(): Tom
+```
+
+##### Explanation:
+
+In this example, we create a `Scanner` object to get input from the user. We then prompt the user to enter their name, read the user's input using the `next()` method, and then print the first word entered by the user.
 
 
-##### Example : 13 -  Java Scanner nextLine() 
+### Example 13 - Java Scanner nextLine()
 
 ```java
 import java.util.Scanner;
@@ -300,13 +336,20 @@ class A {
     }
 }
 ```
-OUTPUT:
 
+##### Output:
+
+```
 Enter your name: tom
 Using nextLine(): tom
+```
+
+##### Explanation:
+
+In this example, we create a `Scanner` object to get input from the user. We then prompt the user to enter their name, read the user's input using the `nextLine()` method, and then print the entire line entered by the user.
 
 
-##### Example : 14 - Read BigInteger and BigDecimal 
+### Example 14 - Read BigInteger and BigDecimal
 
 ```java
 import java.math.BigDecimal;
@@ -334,12 +377,16 @@ class A {
     }
 }
 ```
-OUTPUT:
 
+##### Output:
+
+```
 Enter a big integer: 123456789
 Using nextBigInteger(): 123456789
 Enter a big decimal: 1.23456789
 Using nextBigDecimal(): 1.23456789
+```
 
+##### Explanation:
 
-
+In this example, we create a `Scanner` object to get input from the user. We then prompt the user to enter a big integer and read the user's input using the `nextBigInteger()` method. We then prompt the user to enter a big decimal and read the user's input using the `nextBigDecimal()` method. Finally, we print the values entered by the user.
